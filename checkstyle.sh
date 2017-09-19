@@ -40,8 +40,8 @@ then
 	filename=${file##*/}
 	filenameNoExtension=${filename%.*}
 	dirpath=${file%/*}
-	if [[ $dirpath == $filename ]]; then
-    	cd $dirpath
+	if [[ $dirpath != $filename ]]; then
+    	    cd $dirpath
 	fi
 	if javac -Xlint $filename; then
 	    printf "Compiled Successfully\n\n"
